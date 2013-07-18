@@ -2,17 +2,16 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/core/base.jsp"%>
-<!-- 考虑使用 apache tiles -->
 
 <html>
 <head>
-<title>Insert title here</title>
+<title>发烧电影</title>
+<meta name="description" content="发烧电影,电影下载,电视剧下载,最新电影" />
+<meta name="keywords" content="发烧电影,电影下载,电视剧下载,最新电影"  />
+<link rel="canonical" href="http://www.fireday.cn" />
 <link rel="stylesheet" type="text/css" href="resources/css/home.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/plugins/jquery.liveSearch.css" />
 <script type="text/javascript" src="dwr/interface/helloDwr.js"></script>
-<!-- <script type="text/javascript" src="resources/js/plugins/jquery.corner.js"></script>
-<script type="text/javascript" src="resources/js/plugins/jquery.liveSearch.js"></script> -->
-<!-- <script type="text/javascript" src="resources/js/home.js"></script> -->
 </head>
 
 <body>
@@ -32,18 +31,8 @@
 		<div class="content">
 			<div class="left">Left</div>
 			<div class="right">
-				Welcome to miniGTC <input type="button"
-					value="HelloDwr" onClick="hello()" /> <input type="button"
-					value="PrivateHelloDwr" onClick="privateHello()" /> </br> </br>
-				<form action="sign?logon" method="post">
-					name:<input type="text" name="userCode" /> pwd:<input type="text"
-						name="password" /></br> local:<select name="locale">
-						<option value="zh_cn">中文</option>
-						<option value="en_us">English</option>
-					</select> <input type="submit" />
-				</form>
+				Right
 			</div>
-			
 		</div>
 		<div class="footer">
 		Copyright © 2013 GTC, Inc.
