@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<!-- Param for Spring ContextLoaderListener -->
+	<context-param> 
+		<param-name>contextConfigLocation</param-name> 
+		<param-value>
+			classpath*:config/ioc/*.xml
+		</param-value> 
+	</context-param> 
+	
+	<!-- Spring ContextLoaderListener -->
+	<listener> 
+		<listener-class> 
+				  org.springframework.web.context.ContextLoaderListener
+		</listener-class> 
+		<load-on-startup>1</load-on-startup>
+	</listener>
+	
+	<!-- <filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>
+			org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+	</filter> -->
+	
+	<!-- Spring MVC -->
+	<servlet>
+		<servlet-name>gtc</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+	</servlet>
+	
+	<!-- DWR -->
+	<servlet>
+		<servlet-name>dwr</servlet-name>
+		<servlet-class>org.directwebremoting.spring.DwrSpringServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dwr</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>gtc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	 <welcome-file-list>
+		<welcome-file>/WEB-INF/views/home.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<!-- 
+	<servlet>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>
+			com.gtc.test.TestServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/testServlet</url-pattern>
+	</servlet-mapping>
+	-->
+</web-app>

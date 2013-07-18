@@ -1,4 +1,4 @@
-gtcMovie
-========
+miniGTC
+=======
 
-Gtc Movie
+GTC Framework

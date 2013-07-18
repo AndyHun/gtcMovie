@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/ajax/dwr.jar"/>
+	<classpathentry kind="lib" path="lib/view/jstl.jar"/>
+	<classpathentry kind="lib" path="lib/db/Oracle_10g_10.2.0.4_JDBC_classes12.jar"/>
+	<classpathentry kind="lib" path="lib/tools/pojo/cglib-nodep-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/spring/base/org.springframework.asm-3.1.2.RELEASE.jar" sourcepath="D:/DISCOVER/组件类库/IOC框架/Spring/lib-source/spring-framework-3.1.2.RELEASE/src/org.springframework.asm-sources-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/base/org.springframework.beans-3.1.2.RELEASE.jar" sourcepath="D:/DISCOVER/组件类库/IOC框架/Spring/lib-source/spring-framework-3.1.2.RELEASE/src/org.springframework.beans-sources-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/base/org.springframework.context-3.1.2.RELEASE.jar" sourcepath="D:/DISCOVER/组件类库/IOC框架/Spring/lib-source/spring-framework-3.1.2.RELEASE/src/org.springframework.context-sources-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/base/org.springframework.core-3.1.2.RELEASE.jar" sourcepath="D:/DISCOVER/组件类库/IOC框架/Spring/lib-source/spring-framework-3.1.2.RELEASE/src/org.springframework.core-sources-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/base/org.springframework.expression-3.1.2.RELEASE.jar" sourcepath="D:/DISCOVER/组件类库/IOC框架/Spring/lib-source/spring-framework-3.1.2.RELEASE/src/org.springframework.expression-sources-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/mvc/org.springframework.web-3.1.2.RELEASE.jar" sourcepath="D:/DISCOVER/组件类库/IOC框架/Spring/lib-source/spring-framework-3.1.2.RELEASE/src/org.springframework.web-sources-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/mvc/org.springframework.web.servlet-3.1.2.RELEASE.jar" sourcepath="D:/DISCOVER/组件类库/IOC框架/Spring/lib-source/spring-framework-3.1.2.RELEASE/src/org.springframework.web.servlet-sources-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/JSR303/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/JSR303/hibernate-validator-4.3.0.Final.jar"/>
+	<classpathentry kind="lib" path="lib/JSR303/jboss-logging-3.0.1.GA.jar"/>
+	<classpathentry kind="lib" path="lib/tools/log/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/spring/aop/org.springframework.aop-3.1.2.RELEASE.jar" sourcepath="D:/DISCOVER/组件类库/IOC框架/Spring/lib-source/spring-framework-3.1.2.RELEASE/src/org.springframework.aop-sources-3.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/servlet/jsp-api.jar"/>
+	<classpathentry kind="lib" path="lib/servlet/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/tools/log/jcl-over-slf4j-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/tools/log/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="lib/tools/log/slf4j-log4j12-1.7.5.jar"/>
+	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
+</classpath>
