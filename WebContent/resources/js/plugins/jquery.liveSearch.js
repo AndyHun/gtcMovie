@@ -44,6 +44,13 @@ jQuery('#q').liveSearch({url: '/ajax/search.php?q='}); would add the live-search
 @exampleJS:
 jQuery('#jquery-live-search-example input[name="q"]').liveSearch({url: Router.urlForModule('SearchResults') + '&q='});
 ***/
+/**
+ * Change by AndyHun
+ * 1.forbid input elemnt's event
+ * 2.add one more attribute button
+ * 3.add event for the button.
+ * 
+ */
 jQuery.fn.liveSearch = function (conf) {
 	var config = jQuery.extend({
 		url:			'/search-results.php?q=', 
@@ -53,8 +60,9 @@ jQuery.fn.liveSearch = function (conf) {
 		loadingClass:	'loading', 
 		onSlideUp:		function () {}, 
 		uptadePosition:	false,
-		btnId: '' //Change of AndyHun
+		button : null//New
 	}, conf);
+	var runEnv ={lastValue:null};
 
 	var liveSearch	= jQuery('#' + config.id);
 
@@ -123,16 +131,49 @@ jQuery.fn.liveSearch = function (conf) {
 			});
 		};
 		
-		$('#'+config.btnId).click(function(){
-			document.getElementById('search').lastValue='';
-			document.getElementById('searchBtn').enable=true;
-			input.keyup();
+		//New method
+		$(config.button).click(function(){
+			if(input.val() !==''){
+				if (liveSearch.html() == '') {
+					runEnv.lastValue = '';
+				}
+				if(input.val() == runEnv.lastValue){
+					setTimeout(showLiveSearch, 1);
+				}else{
+					input.addClass(config.loadingClass);
+
+					var q = input.val();
+
+					// Stop previous ajax-request
+					if (this.timer) {
+						clearTimeout(this.timer);
+					}
+
+					// Start a new ajax-request in X ms
+					this.timer = setTimeout(function () {
+						jQuery.get(config.url + q, function (data) {
+							input.removeClass(config.loadingClass);
+
+							// Show live-search if results and search-term aren't empty
+							if (data.length && q.length) {
+								liveSearch.html(data);
+								showLiveSearch();
+							}
+							else {
+								hideLiveSearch();
+							}
+						});
+					}, config.typeDelay);
+					runEnv.lastValue = input.val();
+				}
+			}
 		});
 
-		input
+		/*input
 			// On focus, if the live-search is empty, perform an new search
 			// If not, just slide it down. Only do this if there's something in the input
 			.focus(function () {
+				return;
 				if (this.value !== '') {
 					// Perform a new search if there are no search results
 					if (liveSearch.html() == '') {
@@ -148,9 +189,7 @@ jQuery.fn.liveSearch = function (conf) {
 			})
 			// Auto update live-search onkeyup
 			.keyup(function () {
-				if(!document.getElementById('searchBtn').enable){
-					return;
-				}
+				return;
 				// Don't update live-search if it's got the same value as last time
 				if (this.value != this.lastValue) {
 					input.addClass(config.loadingClass);
@@ -179,8 +218,7 @@ jQuery.fn.liveSearch = function (conf) {
 					}, config.typeDelay);
 
 					this.lastValue = this.value;
-					document.getElementById('searchBtn').enable=false;
 				}
-			});
+			});*/
 	});
 };

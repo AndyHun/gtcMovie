@@ -10,33 +10,30 @@
 <meta name="keywords" content="发烧电影,电影下载,电视剧下载,最新电影"  />
 <link rel="canonical" href="http://www.fireday.cn" />
 <link rel="stylesheet" type="text/css" href="resources/css/home.css" />
-<link rel="stylesheet" type="text/css" href="resources/css/plugins/jquery.liveSearch.css" />
 <script type="text/javascript" src="dwr/interface/helloDwr.js"></script>
 </head>
 
 <body>
-	<div class="container">
-		<div class="header">
-			<div class="header-bg">
-				<img src="resources/image/home/header-bg.jpg">
-			</div>
-			<div class="header-logo">
-				<img src="resources/image/gtc-logo.jpg">
-			</div>
-			<div id="header-search" class="header-search" >
-				
-			</div>
+	<div class="contentLayout">
+		<div class="searchLayout">
 		</div>
-		
-		<div class="content">
-			<div class="left">Left</div>
-			<div class="right">
-				Right
-			</div>
-		</div>
-		<div class="footer">
-		Copyright © 2013 GTC, Inc.
-		[闽ICP备xxxx号]
+		<div class="listMenuLayout">
+			<ul>
+				<li>电影</li> 
+				<li>动作</li>
+				<li>喜剧</li>
+				<li>爱情</li>
+				<li>科幻</li>
+				<li>剧情</li>
+				<li>恐怖</li>
+				<li>惊险</li>
+				<li>冒险</li>
+				<li>动画</li>
+				<li>战争</li>
+				<li>电视剧</li>
+				<li>动漫世界</li>
+				<li>综艺天地</li>
+			</ul>
 		</div>
 	</div>
 </body>

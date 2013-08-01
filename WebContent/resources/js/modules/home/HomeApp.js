@@ -1,13 +1,9 @@
 define([ 'jquery', 'modules/home/models/LoginUser',
-		'component/views/LiveSearch' ], function($, LoginUser, LiveSearch) {
+		'component/views/SearchMenu' ], function($, LoginUser, SearchMenu) {
 	return {
 		init : function() {
-			var loginUser = new LoginUser;
-			loginUser.set({
-				name : 'AndyHun'
-			});
-			var liveSearch = new LiveSearch({
-				el : $("#header-search"),
+			var searchMenu = new SearchMenu({
+				el : $(".searchLayout"),
 				liveUrl : "sign?logon&userCode="
 			});
 		}

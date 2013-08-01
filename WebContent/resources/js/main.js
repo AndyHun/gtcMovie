@@ -4,6 +4,7 @@ require.config({
 		jquery : 'lib/jquery',
 		underscore : 'lib/underscore',
 		backbone : 'lib/backbone',
+		mediator : "lib/backbone-mediator",
 		jqCarousel : 'plugins/cloud-carousel.1.0.5',
 		jqCorner : 'plugins/jquery.corner',
 		jqLiveSearch : 'plugins/jquery.liveSearch',
