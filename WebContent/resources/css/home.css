@@ -1,7 +1,11 @@
-.contentLayout{
+.contentLayout {
 	margin: auto auto;
 	width: 1000px;
-	overflow: hidden;
-	//border: 1px solid black;
+	overflow: hidden; //
+	border: 1px solid black;
+	font-size: 14px;
 }
-input,button,select,textarea{outline:none}
+
+input,button,select,textarea {
+	outline: none
+}

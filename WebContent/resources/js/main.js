@@ -1,16 +1,16 @@
 require.config({
-	baseUrl : 'resources/js',
+	baseUrl : 'modules/component',
 	paths : {
-		jquery : 'lib/jquery',
-		underscore : 'lib/underscore',
-		backbone : 'lib/backbone',
-		mediator : "lib/backbone-mediator",
-		jqCarousel : 'plugins/cloud-carousel.1.0.5',
-		jqCorner : 'plugins/jquery.corner',
-		jqLiveSearch : 'plugins/jquery.liveSearch',
-		jqNoConflict : 'core/JqueryNoConflict',
-		text : 'lib/text',
-		GtcView : 'core/views/GtcView'
+		jquery : '/modules/lib/jquery',
+		underscore : '/modules/lib/underscore',
+		backbone : '/modules/lib/backbone',
+		mediator : "/modules/lib/backbone-mediator",
+		jqCarousel : '/modules/plugins/cloud-carousel.1.0.5',
+		jqCorner : '/modules/plugins/jquery.corner',
+		jqLiveSearch : '/modules/plugins/jquery.liveSearch',
+		jqNoConflict : '/modules/core/JqueryNoConflict',
+		text : '/modules/lib/text',
+		GtcView : '/modules/core/views/GtcView'
 	},
 	shim : {
 		jqCarousel : {
@@ -51,6 +51,6 @@ require.config({
 	}
 });
 
-require([ 'modules/home/HomeApp' ], function(homeApp) {
+require([ '/modules/app/HomeApp' ], function(homeApp) {
 	homeApp.init();
 });

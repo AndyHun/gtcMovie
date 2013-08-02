@@ -1,5 +1,5 @@
 define([ 'jquery', 'backbone', 'underscore',
-		'text!component/templates/SearchMenu.html', 'GtcView','jqLiveSearch','mediator' ], function($,
+		'text!SearchMenu.html', 'GtcView','jqLiveSearch','mediator' ], function($,
 		Backbone, _, viewTemplate, GtcView,jqLiveSearch,Mediator) {
 	return GtcView.extend({
 		defaults : {
@@ -20,8 +20,8 @@ define([ 'jquery', 'backbone', 'underscore',
 		},
 		initialize : function() {
 			console.debug("SearchMenu.initialize");
-			this.loadCss('resources/css/plugins/jquery.liveSearch.css');
-			this.loadCss('resources/js/component/css/SearchMenu.css');
+			this.loadCss('css/jquery.liveSearch.css');
+			this.loadCss('css/SearchMenu.css');
 			GtcView.prototype.initialize.apply(this, arguments);
 			Backbone.Mediator.sub("MovieSearch:focus", this.focus, this);
 			Backbone.Mediator.sub("MovieSearch:focus", this.doDraw, this);

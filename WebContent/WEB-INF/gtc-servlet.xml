@@ -13,6 +13,7 @@
 	<mvc:annotation-driven/>
 	<!-- handle requests for static resources -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/modules/**" location="/modules/" />
 	<context:component-scan base-package="com.gtc.*.web.controller"/>
 	
 	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">

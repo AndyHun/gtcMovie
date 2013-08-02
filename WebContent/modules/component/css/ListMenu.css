@@ -1,0 +1,33 @@
+.listMenuLayout {
+	background-color: #FAFAFA;
+	width: 100%;
+	height: 40px;
+	padding: 5px 0px 5px 0px;
+}
+
+.horizontalMenu {
+	list-style-type: none;
+}
+
+.horizontalMenu li {
+	float: left;
+	margin-left: 20px;
+	border-left: #BBBBBB dotted 1px;
+	padding-left: 7px;
+}
+
+.horizontalMenu .first {
+	margin-left: 0px;
+	border-left: 0px;
+	padding-left: 0px;
+}
+
+.horizontalMenu li a {
+	text-decoration: none;
+	color: #323232;
+	font-size: 16px;
+}
+
+.horizontalMenu li a:hover {
+	color: #0090CE;
+}
