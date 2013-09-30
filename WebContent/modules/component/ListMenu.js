@@ -1,5 +1,5 @@
 define([ 'jquery', 'backbone', 'underscore',
-		'text!templates/ListMenu.html', 'GtcView','mediator' ], function($,
+		'text!component/template/ListMenu.html', 'GtcView','mediator' ], function($,
 		Backbone, _, viewTemplate, GtcView,Mediator) {
 	return GtcView.extend({
 		defaults : {

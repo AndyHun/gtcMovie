@@ -1,5 +1,5 @@
 define([ 'jquery', 'backbone', 'underscore',
-		'text!SearchMenu.html', 'GtcView','jqLiveSearch','mediator' ], function($,
+		'text!component/template/SearchMenu.html', 'GtcView','jqLiveSearch','mediator' ], function($,
 		Backbone, _, viewTemplate, GtcView,jqLiveSearch,Mediator) {
 	return GtcView.extend({
 		defaults : {

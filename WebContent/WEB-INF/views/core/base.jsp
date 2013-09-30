@@ -21,8 +21,8 @@
 	//set to attribute
 	request.setAttribute("basePath",basePath);
 	request.setAttribute("local",local);
-	//System.out.println("=======================LOCALE======================"+local);
-	//System.out.println("=======================BASEPATH======================"+basePath);
+	System.out.println("=======================LOCALE======================"+local);
+	System.out.println("=======================BASEPATH======================"+basePath);
 %>
 <base href="<%=basePath%>">	
 <link rel="stylesheet" type="text/css" href="resources/css/base.css" />

@@ -1,5 +1,5 @@
 define([ 'jquery', 'backbone', 'underscore',
-		'text!templates/ListMedia.html', 'GtcView','mediator' ], function($,
+		'text!component/template/ListMedia.html', 'GtcView','mediator' ], function($,
 		Backbone, _, viewTemplate, GtcView,Mediator) {
 	return GtcView.extend({
 		defaults : {

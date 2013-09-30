@@ -1,5 +1,5 @@
 define([ 'jquery',
-		'SearchMenu','ListMenu','ListMedia' ], function($, SearchMenu, ListMenu,ListMedia) {
+		'component/SearchMenu','component/ListMenu','component/ListMedia' ], function($, SearchMenu, ListMenu,ListMedia) {
 	return {
 		init : function() {
 			var searchMenu = new SearchMenu({
