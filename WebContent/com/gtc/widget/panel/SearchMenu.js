@@ -1,7 +1,7 @@
 define([ 'jquery', 'backbone', 'underscore',
-		'text!component/template/SearchMenu.html', 'GtcView','jqLiveSearch','mediator' ], function($,
-		Backbone, _, viewTemplate, GtcView,jqLiveSearch,Mediator) {
-	return GtcView.extend({
+		'text!widget/panel/template/SearchMenu.html', 'corePackage','jqLiveSearch','mediator' ], function($,
+		Backbone, _, viewTemplate, core, jqLiveSearch,Mediator) {
+	return core.View.extend({
 		defaults : {
 			liveUrl : null,
 			liveEl : ".movieSearch",
@@ -20,9 +20,9 @@ define([ 'jquery', 'backbone', 'underscore',
 		},
 		initialize : function() {
 			console.debug("SearchMenu.initialize");
-			this.loadCss('css/jquery.liveSearch.css');
-			this.loadCss('css/SearchMenu.css');
-			GtcView.prototype.initialize.apply(this, arguments);
+			this.loadCss('widget/panel/css/jquery.liveSearch.css');
+			this.loadCss('widget/panel/css/SearchMenu.css');
+			core.View.prototype.initialize.apply(this, arguments);
 			Backbone.Mediator.sub("MovieSearch:focus", this.focus, this);
 			Backbone.Mediator.sub("MovieSearch:focus", this.doDraw, this);
 			Backbone.Mediator.sub("MovieSearch:blur", this.blur,this );

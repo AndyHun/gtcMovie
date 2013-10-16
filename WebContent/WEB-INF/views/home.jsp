@@ -20,11 +20,9 @@
 		<div class="listMenuLayout">
 		</div>
 		<div class="listMovieLayout">
-			
 		</div>
 	</div>
-</body>
 <!-- A page can only have one the following script -->
-<script data-main="resources/js/main" src="modules/lib/require.js"></script>
-
+<script data-main="com/gtc/load/homeLoad" src="lib/require.js"></script>
+</body>
 </html>

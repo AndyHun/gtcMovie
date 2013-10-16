@@ -1,15 +1,16 @@
 require.config({
 	baseUrl : 'com/gtc',
 	paths : {
-		jquery : '/lib/jquery',
-		underscore : '/lib/underscore',
-		backbone : '/lib/backbone',
-		mediator : "/lib/backbone-mediator",
-		jqCarousel : '/lib/cloud-carousel.1.0.5',
-		jqCorner : '/lib/jquery.corner',
-		jqLiveSearch : '/lib/jquery.liveSearch',
+		jquery : '../../lib/jquery',
+		underscore : '../../lib/underscore',
+		backbone : '../../lib/backbone',
+		mediator : "../../lib/backbone-mediator",
+		jqCarousel : '../../lib/cloud-carousel.1.0.5',
+		jqCorner : '../../lib/jquery.corner',
+		jqLiveSearch : '../../lib/jquery.liveSearch',
 		jqNoConflict : 'core/JqueryNoConflict',
-		text : '/lib/text'
+		corePackage : 'core/corePackage',
+		text : '../../lib/text'
 	},
 	shim : {
 		jqCarousel : {
@@ -50,6 +51,8 @@ require.config({
 	}
 });
 
-require(['app/HomeApp' ], function(homeApp) {
-	homeApp.init();
+require(['app/HomeApp', 'corePackage'], function(homeApp, core) {
+	new core.Panel({width:200,count:89});
+	//new core.View({width:200});
+	//homeApp.init();
 });

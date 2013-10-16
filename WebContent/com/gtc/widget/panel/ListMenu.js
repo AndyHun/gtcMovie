@@ -1,9 +1,9 @@
 define([ 'jquery', 'backbone', 'underscore',
-		'text!component/template/ListMedia.html', 'GtcView','mediator' ], function($,
-		Backbone, _, viewTemplate, GtcView,Mediator) {
-	return GtcView.extend({
+		'text!widget/panel/template/ListMenu.html', 'corePackage','mediator' ], function($,
+		Backbone, _, viewTemplate, core,Mediator) {
+	return core.View.extend({
 		defaults : {
-			isLoadCss : true
+			
 		},
 		template : _.template(viewTemplate),
 		events : {
@@ -11,10 +11,8 @@ define([ 'jquery', 'backbone', 'underscore',
 		},
 		initialize : function() {
 			console.debug("ListMenu.initialize");
-			if(this.get("isLoadCss")){
-				this.loadCss('css/ListMedia.css');
-			}
-			GtcView.prototype.initialize.apply(this, arguments);
+			this.loadCss('widget/panel/css/ListMenu.css');
+			core.View.prototype.initialize.apply(this, arguments);
 			this.render();
 		},
 		render : function() {
