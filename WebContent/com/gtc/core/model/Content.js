@@ -14,7 +14,11 @@ define(['jquery', 'backbone'],function($, Backbone){
 			
 		},
 		initialize: function(){
-			
+			console.debug("Content initialize");
+		},
+		destroy: function(){
+			singleton = null;
+			console.debug("Setting destroy");
 		}
 	});
 });

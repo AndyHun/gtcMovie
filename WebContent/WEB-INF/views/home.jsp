@@ -5,24 +5,18 @@
 
 <html>
 <head>
-<title>发烧电影</title>
-<meta name="description" content="发烧电影,电影下载,电视剧下载,最新电影" />
-<meta name="keywords" content="发烧电影,电影下载,电视剧下载,最新电影"  />
+<title></title>
 <link rel="canonical" href="http://www.fireday.cn" />
-<link rel="stylesheet" type="text/css" href="resources/css/home.css" />
-<!-- <script type="text/javascript" src="dwr/interface/helloDwr.js"></script>
-</head> -->
+<link rel="stylesheet" type="text/css" href="resources/css/classify.css" />
+<!-- <script type="text/javascript" src="dwr/interface/helloDwr.js"></script>-->
+</head> 
 
 <body>
-	<div class="contentLayout">
-		<div class="searchLayout">
-		</div>
-		<div class="listMenuLayout">
-		</div>
-		<div class="listMovieLayout">
-		</div>
+	<div class="headerMenu">
+	</div>
+	<div class="classifyMenu">
 	</div>
 <!-- A page can only have one the following script -->
-<script data-main="com/gtc/load/homeLoad" src="lib/require.js"></script>
+<script data-main="com/gtc/load/classifyLoad" src="lib/require.js"></script>
 </body>
 </html>

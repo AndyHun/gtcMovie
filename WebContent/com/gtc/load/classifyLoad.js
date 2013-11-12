@@ -51,6 +51,12 @@ require.config({
 	}
 });
 
-require(['app/HomeApp'], function(homeApp) {
+require(['app/ClassifyApp','corePackage'], function(classifyApp,core) {
+	var config =  core.Config.getInstance();
+	config.setSetting("path","rootPath");
+	var session = core.Session.getInstance();
+	session.reloadSetting();
+	console.debug(session.getSetting("path"));
 	
+	//classifyApp.init();
 });

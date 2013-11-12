@@ -1,0 +1,67 @@
+.menuPanel {
+	background-color: #080808;
+	/* background-image: url("../image/menu-bg-gradient.png"); */
+	height: 50px;
+	line-height: 50px;
+}
+
+.menuPanel .menuList{
+	width: 800px;
+	margin: auto auto;
+}
+
+.menuPanel ul {
+	list-style: none;
+}
+
+.menuPanel ul li {
+	display: inline;;
+}
+
+.menuPanel ul li:HOVER {
+	cursor: pointer;
+	/* background-color: #AAAAAA; */
+	background-color: #444444;
+}
+
+.menuPanel ul li {
+	float: none;
+	padding: 15px 15px 15px;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #080808;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	margin: 0 2px;
+	vertical-align: -2px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-top: 1px;
+	line-height: 14px;
+	vertical-align: text-top;
+	background: url("../image/icons-white.png") 0 0;
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+.icon-home {
+	background-position: 0px -24px;
+}
+
+.icon-hot {
+	background-position: -72px -120px;
+}
+
+.icon-classify {
+	background-position: -264px 0px;
+}
+
+.icon-latest {
+	background-position: -312px -24px;
+}
+

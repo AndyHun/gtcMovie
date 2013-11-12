@@ -10,9 +10,19 @@ define(["jquery", "backbone"],function($, Backbone){
             singleton = this;
 		},
 		defaults:{
-			"Session.config" : {widgetPath:"com/gtc/widget/"}
+			"config.widgetPath" : "com/gtc/widget/",
+		    "config.mediaPath" : "resources/mediaImage",
+		    "content.test": "content-Test"
+		},
+		setSetting: function(key, value){
+			this.set(Config.CONFIG_PREFIX+key, value);
+		},
+		setContent: function(key){
+			this.set(Config.CONTENT_PREFIX+key, value);
 		}
 	});
+	Config.CONFIG_PREFIX = "config.";
+	Config.CONTENT_PREFIX = "content.";
 	
 	Config.getInstance = function(){
 		if(singleton == null){

@@ -11,7 +11,8 @@ define(['jquery', 'backbone'],function($, Backbone){
             singleton = this;
 		},
 		defaults: {
-			cpPath: null
+			widgetPath: null,
+			mediaPath: null
 		},
 		initialize: function(){
 			console.debug("Setting initialize");
