@@ -21,11 +21,16 @@
     <!-- 基于默认的MVC注解支持的配置 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
-	
+
+    <!-- 基于jackSon的Json 解析, 需配合 @ResponseBody-->
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+        <property name="supportedMediaTypes" value="application/json"/>
+    </bean>
+
 	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 		<property name="paramName" value="siteLanguage"/>
 	</bean>
-	
+
 	<!-- viewResolver -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass">
