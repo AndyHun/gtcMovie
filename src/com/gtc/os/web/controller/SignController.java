@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.gtc.os.service.UserService;
 import com.gtc.os.vo.LogonVO;
 import com.gtc.os.vo.UserVO;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @description
@@ -49,8 +50,8 @@ public class SignController {
 	 * }
 	 */
 
-	@RequestMapping(params = "logon")
-	public String logon(@Valid LogonVO logonVO, BindingResult bindingResult, Model model, HttpServletRequest request) {
+	@RequestMapping(value="logon")
+	public String logon( @RequestParam("logonVO") LogonVO logonVO, BindingResult bindingResult, Model model, HttpServletRequest request) {
 		log.info("Access logon");
 		if(bindingResult.hasErrors()){
 			return this.fromView;
@@ -62,7 +63,13 @@ public class SignController {
 		return this.successView;
 	}
 
-	@RequestMapping(params = "logout")
+    @RequestMapping(value="ps")
+    public String paramSimple(@RequestParam("id") String id, @RequestParam(value="name",required = false) String name, HttpServletRequest request) {
+        log.info(id);
+        return this.fromView;
+    }
+
+    @RequestMapping("logout")
 	public String logout() {
 		return this.fromView;
 	}

@@ -16,6 +16,11 @@
 	<mvc:resources mapping="/com/**" location="/com/" />
 	<mvc:resources mapping="/lib/**" location="/lib/" />
 	<context:component-scan base-package="com.gtc.*.web.controller"/>
+    <context:component-scan base-package="com.gtc.*.controller"/>
+
+    <!-- 基于默认的MVC注解支持的配置 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
 	
 	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 		<property name="paramName" value="siteLanguage"/>

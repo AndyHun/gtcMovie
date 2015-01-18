@@ -58,5 +58,5 @@ require(['app/ClassifyApp','corePackage'], function(classifyApp,core) {
 	session.reloadSetting();
 	console.debug(session.getSetting("path"));
 	
-	//classifyApp.init();
+	classifyApp.init();
 });
