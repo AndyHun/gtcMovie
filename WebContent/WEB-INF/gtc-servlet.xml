@@ -24,9 +24,12 @@
 
     <!-- 基于jackSon的Json 解析, 需配合 @ResponseBody
          需要引入jackson-core-asl.jar jackson-mapper-asl.jar-->
-    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes" value="application/json"/>
     </bean>
+
+    <!--<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+    </bean>-->
 
 	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 		<property name="paramName" value="siteLanguage"/>

@@ -59,7 +59,7 @@ public class MvcController {
         return list;
     }
 
-    @RequestMapping(value = "getUserList", produces = "application/json;")
+    @RequestMapping(value = "getUserMap", produces = "application/json;")
     @ResponseBody
     public Map<String, Object> geUserMap() {
         Map<String, Object> map = new HashMap<String, Object>();
