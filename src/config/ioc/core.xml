@@ -14,15 +14,18 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <!-- 装载入自定义的Jsonp MessageConverter  -->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="false">
             <ref bean="jsonpConverter"/>
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <!--AOP自动代理：开启AOP功能 -->
     <aop:aspectj-autoproxy/>
 	<context:component-scan base-package="com.gtc"/>
 
+    <!--初始化自定义MessageConverter for jsonp -->
     <bean id="jsonpConverter" class="com.gtc.core.json.MappingJackson2JsonpHttpMessageConverter">
         <property name="supportedMediaTypes">
             <list>
