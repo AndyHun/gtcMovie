@@ -3,20 +3,20 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc
-	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<mvc:annotation-driven/>
 	<!-- handle requests for static resources -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<mvc:resources mapping="/com/**" location="/com/" />
 	<mvc:resources mapping="/lib/**" location="/lib/" />
 	<context:component-scan base-package="com.gtc.*.web.controller"/>
-    <context:component-scan base-package="com.gtc.*.controller"/>
 
     <!-- 基于默认的MVC注解支持的配置 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
@@ -24,9 +24,9 @@
 
     <!-- 基于jackSon的Json 解析, 需配合 @ResponseBody
          需要引入jackson-core-asl.jar jackson-mapper-asl.jar-->
-    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+    <!--<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes" value="application/json"/>
-    </bean>
+    </bean>-->
 
     <!--<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
     </bean>-->

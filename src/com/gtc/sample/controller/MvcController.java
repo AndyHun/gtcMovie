@@ -1,5 +1,6 @@
 package com.gtc.sample.controller;
 
+import com.gtc.core.json.JSONP;
 import com.gtc.os.model.User;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -35,6 +36,7 @@ public class MvcController {
 
     @RequestMapping(value = "getUser", produces = "application/json;")
     @ResponseBody
+    @JSONP
     public User geUser() {
         User user = new User();
         user.setUserCode("1");
@@ -81,6 +83,7 @@ public class MvcController {
 
     @RequestMapping("getInt")
     @ResponseBody
+    @JSONP
     public int getInt() {
         return 1;
     }
