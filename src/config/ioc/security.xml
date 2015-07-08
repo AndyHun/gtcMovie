@@ -2,13 +2,61 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:security="http://www.springframework.org/schema/security"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <!--
+        auto-config 代表了如下配置
+        <security:http>
+            <security:form-login/>
+            <security:http-basic/>
+            <security:logout/>
+        </security:http>
+     -->
+    <security:http auto-config='true'>
+        <!-- 配置无需保护的资源 -->
+        <security:intercept-url pattern="/resources/**" filters="none"/>
+        <security:intercept-url pattern="/com/**" filters="none"/>
+        <security:intercept-url pattern="/lib/**" filters="none"/>
+
+        <security:intercept-url pattern="/views/login.jsp*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <security:intercept-url pattern="/**" access="ROLE_USER" />
+        <security:form-login login-page='/views/login.jsp'/>
+
+        <!-- 指定使用何种协议访问指定资源
+        <security:intercept-url pattern="/secure/**" access="ROLE_USER" requires-channel="https"/>
+        -->
+        <!-- 指定登录后的默认主页
+        <security:form-login login-page='/login.htm' default-target-url='/home.htm'
+                    always-use-default-target='true' />
+        -->
+
+        <!-- 非默认端口时，指定端口号
+        <security:port-mappings>
+            <security:port-mapping http="9080" https="9443"/>
+        </security:port-mappings>
+        -->
+    </security:http>
+
+    <!-- 定义测试用户-->
+    <security:authentication-manager> <!-- 创建一个ProviderManager -->
+        <!--<security:authentication-provider user-service-ref='myUserDetailsService'/> 可自定义实现-->
+        <security:authentication-provider><!--创建一个DaoAuthenticationProvider-->
+            <security:password-encoder hash="sha"><!-- 使用SHA加密密码, 使用ref 可指定自定义密码编码器 -->
+                <security:salt-source user-property="username"/><!-- 读取UserDetailsService返回的UserDetails对象中的username作为盐值 -->
+            </security:password-encoder>
+            <security:user-service><!-- 创建一个InMemoryDaoImpl-->
+                <security:user name="jimi" password="jimispassword" authorities="ROLE_USER,ROLE_ADMIN"/>
+                <security:user name="bob" password="bobspassword" authorities="ROLE_USER"/>
+            </security:user-service>
+        </security:authentication-provider>
+    </security:authentication-manager>
 	
 </beans>
